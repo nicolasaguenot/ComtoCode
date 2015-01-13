@@ -1,0 +1,59 @@
+doctrine:
+    dbal:
+        connections:
+            fre_repository_connection:
+                driver: pdo_mysql
+                host: localhost
+                user: usercomtocode
+                password: c0mtoc0d3
+                dbname: comtocode_ez
+                charset: UTF8
+ezpublish:
+    imagemagick:
+        enabled: false
+    repositories:
+        fre_repository:
+            engine: legacy
+            connection: fre_repository_connection
+    siteaccess:
+        default_siteaccess: fre
+        list:
+            - fre
+            - eng
+            - ctcbo
+        groups:
+            comtocode_site_clean_group:
+                - fre
+                - eng
+                - ctcbo
+        match:
+            URIElement: '1'
+    system:
+        comtocode_site_clean_group:
+            repository: fre_repository
+            var_dir: var/ezdemo_site
+        fre:
+            languages:
+                - fre-FR
+            session:
+                name: eZSESSID
+        ctcbo:
+            legacy_mode: true
+            languages:
+                - fre-FR
+                - eng-GB
+        eng:
+            languages:
+                - eng-GB
+                - fre-FR
+            session:
+                name: eZSESSID
+stash:
+    caches:
+        default:
+            drivers:
+                - FileSystem
+            inMemory: true
+            registerDoctrineAdapter: false
+
+

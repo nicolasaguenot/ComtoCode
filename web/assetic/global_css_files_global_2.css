@@ -1,0 +1,54 @@
+body{
+    font-family: "Lato", "helvetica", arial, sans-serif;
+}
+
+.align-center{
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+b, strong{ font-weight:700; }
+
+
+h1, h2, h3{ text-transform: uppercase;}
+
+
+
+
+/* Intro block */
+
+#intro-block{
+    position:relative;
+}
+#intro-block .bg{
+    padding:80px 0px;
+}
+
+#intro-block .bg h2,
+#intro-block .bg h3{
+    margin:10px 0px;
+    color:#fff
+}
+#intro-block .bg h2
+{
+    font-size:40px;
+    font-weight:400;
+}
+#intro-block .bg h3{
+    font-size:35px;
+    font-weight:300;
+}
+#intro-block .bg-img{
+    height: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+#intro-block .bg-img .img-full{
+    position:absolute;
+    top:0px;
+    width:100%;
+}
+
+/* End intro block */
