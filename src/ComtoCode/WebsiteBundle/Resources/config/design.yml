@@ -1,0 +1,16 @@
+
+assets:
+    global_js_files:
+        inputs:
+
+    global_js_footer_files:
+        inputs:
+            - '@ComtoCodeWebsiteBundle/Resources/public/js/bootstrap.min.js'
+    global_css_files:
+        inputs:
+            - '@ComtoCodeWebsiteBundle/Resources/public/css/bootstrap.min.css'
+            - '@ComtoCodeWebsiteBundle/Resources/public/css/fontawesome.min.css'
+            - '@ComtoCodeWebsiteBundle/Resources/public/css/project/global.css'
+    homepage_css_files:
+        inputs:
+            - '@ComtoCodeWebsiteBundle/Resources/public/css/project/homepage.css'

@@ -1,0 +1,14 @@
+system:
+    default:
+        user:
+            layout: ComtoCodeWebsiteBundle::pagelayout.html.twig
+        location_view:
+            full:
+                homepage:
+                    template: ComtoCodeWebsiteBundle:full:homepage.html.twig
+                    match:
+                        Identifier\ContentType: "homepage"
+                landingpage:
+                    template: ComtoCodeWebsiteBundle:full:landingpage.html.twig
+                    match:
+                        Identifier\ContentType: "landing_page"

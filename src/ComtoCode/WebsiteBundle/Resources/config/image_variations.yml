@@ -1,0 +1,7 @@
+system:
+    default:
+        image_variations:
+            medium:
+                reference: null
+                filters:
+                    - { name: geometry/scaledownonly, params: [200, 290] }

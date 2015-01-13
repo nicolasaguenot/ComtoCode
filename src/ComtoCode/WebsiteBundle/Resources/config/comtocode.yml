@@ -1,0 +1,4 @@
+system:
+    default:
+        user:
+            layout: ComtoCodeWebsiteBundle::pagelayout.html.twig

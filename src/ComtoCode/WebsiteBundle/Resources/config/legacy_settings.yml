@@ -1,0 +1,5 @@
+system:
+    default:
+        templating:
+            view_layout: "ComtoCodeWebsiteBundle::pagelayout.html.twig"
+            module_layout: "ComtoCodeWebsiteBundle::pagelayout_legacy.html.twig"

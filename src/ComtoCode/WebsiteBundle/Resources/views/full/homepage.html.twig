@@ -1,0 +1,43 @@
+{% extends "ComtoCodeWebsiteBundle::pagelayout.html.twig" %}
+
+
+
+{% block meta %}
+    {% if not ez_is_field_empty( content, "meta_title" ) %}
+        {% set title = ez_field_value( content, "meta_title" ).text %}
+    {% endif %}
+    {% if not ez_is_field_empty( content, "meta_description" ) %}
+       {% set meta_tags = meta_tags|merge( {"description": ez_field_value( content, "meta_description" ).text }) %}
+    {% endif %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <article id="intro-block" class="container-fluid">
+
+        <div class="row">
+            {# Image field bg_intro - If not empty, we display it #}
+            {% if not ez_is_field_empty( content, "bg_intro" ) %}
+                <div class="bg bg-img">
+                    {% set imageAlias = ez_image_alias( content.getField( "bg_intro" ), content.versionInfo, "original" ) %}
+                    <img class="img-full" src="{{ asset( imageAlias.uri ) }}" height="{{ imageAlias.height }}" width="{{ imageAlias.width }}" alt="" />
+            {# if image field bg_intro is empty and text line color_bg_intro contains a value, we display this color #}
+            {% elseif not ez_is_field_empty( content, "color_bg_intro" ) %}
+                <div class="bg bg-color" style="background-color:{{ ez_field_value(content, 'color_bg_intro').text }}">
+            {% endif %}
+                {# Intro xml block field #}
+                {% if not ez_is_field_empty( content, "intro" ) %}
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 align-center">
+                                    {{ ez_render_field( content, "intro" ) }}
+                                </div>
+                            </div>
+                        </div>
+                {% endif %}
+            </div>
+
+        </div>
+    </article>
+
+{% endblock %}

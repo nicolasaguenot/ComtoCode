@@ -1,0 +1,3 @@
+comto_code_website_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ComtoCodeWebsiteBundle:Default:index }

@@ -1,0 +1,16 @@
+
+<link href='http://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+
+{% stylesheets '@global_css_files' filter='cssrewrite' output='css/global.css' %}
+    <link rel="stylesheet" type="text/css" href="{{ asset_url }}"/>
+{% endstylesheets %}
+
+
+{# TODO: Add dynamic contentTypeId file selection #}
+{% if location.contentInfo.contentTypeId == 40 %}
+    {% stylesheets '@homepage_css_files' filter='cssrewrite' output='css/homepage.css' %}
+        <link rel="stylesheet" type="text/css" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endif %}
+
+{{ ez_legacy_render_css() }}

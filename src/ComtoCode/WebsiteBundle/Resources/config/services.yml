@@ -1,0 +1,4 @@
+services:
+#    comto_code_website.example:
+#        class: ComtoCode\WebsiteBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

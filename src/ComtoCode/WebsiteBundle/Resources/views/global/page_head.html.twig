@@ -1,0 +1,35 @@
+
+{% if content is defined and title is not defined %}
+    {% set title = ez_content_name( content ) %}
+{% endif %}
+
+<title>{{ title|default( 'Home' ) }}</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Com to Code"/>
+<meta name="copyright" content="Com to Code"/>
+{#
+<meta name="description" content="Content Management System"/>
+<meta name="keywords" content="cms, publish, e-commerce, content management, development framework"/>
+#}
+<meta name="MSSmartTagsPreventParsing" content="TRUE"/>
+<meta name="generator" content="eZ Publish"/>
+
+{% if meta_tags is defined %}
+    {% for tagName, tagValue in meta_tags %}
+        <meta name="{{ tagName }}" content="{{ tagValue }}" />
+    {% endfor %}
+{% endif %}
+
+<link rel="Home" href="{{ path( ezpublish.rootLocation ) }}" title="{{ 'Home'|trans }}"/>
+<link rel="Index" href="{{ path( ezpublish.rootLocation ) }}" title="{{ 'Home'|trans }}"/>
+<link rel="Shortcut icon" href="{{ asset( "/design/standard/images/favicon.ico" ) }}" type="image/x-icon"/>
+<link rel="Copyright" href="{{ path( 'ez_legacy', {'module_uri': '/ezinfo/copyright'} ) }}"/>
+<link rel="Author" href="{{ path( 'ez_legacy', {'module_uri': '/ezinfo/about'} ) }}"/>
+<link rel="Alternate" type="application/rss+xml" title="RSS" href="{{ path( 'ez_legacy', {'module_uri': '/rss/feed/my_feed'} ) }}"/>
+
+{# adding canonical url for all defined content #}
+{% if content is defined and content.contentInfo.mainLocationId %}
+    <link rel="canonical" href="{{ path( 'ez_urlalias', {'locationId': content.contentInfo.mainLocationId} ) }}" />
+{% endif %}
