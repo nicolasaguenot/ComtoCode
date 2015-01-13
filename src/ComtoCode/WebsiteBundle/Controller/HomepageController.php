@@ -32,6 +32,7 @@ class HomepageController extends Controller
         $searchService = $this->getRepository()->getSearchService();
 
         // See comtocde.yml to see params
+        $confNode = $this->container->getParameter("comtocode.node.conf");
         $skillsParentNode = $this->container->getParameter("comtocode.node.skills");
         $refsParentNode = $this->container->getParameter("comtocode.node.refs");
 
@@ -60,11 +61,19 @@ class HomepageController extends Controller
             new Criterion\Visibility( Criterion\Visibility::VISIBLE ),
 
         );
-
         $queryRefs = new LocationQuery();
         $queryRefs->criterion = new Criterion\LogicalAnd( $criterionRefs );
         $queryRefs->limit = $maxRefs;
         $listRefs = $searchService->findContent($queryRefs);
+
+        // Load conf params
+        $criterionConf = array(
+            new Criterion\LocationId( $confNode )
+
+        );
+        $queryConf = new LocationQuery();
+        $queryConf->criterion = new Criterion\LogicalAnd( $criterionConf );
+        $confContent = $searchService->findContent($queryConf);
 
        return $this->get( 'ez_content' )->viewLocation(
             $locationId, $viewType, $layout,
@@ -72,7 +81,8 @@ class HomepageController extends Controller
                 'skills' => $listSkills->searchHits,
                 'skillsParentNode' => $skillsParentNode,
                 'refs' => $listRefs->searchHits,
-                'refsParentNode' => $refsParentNode
+                'refsParentNode' => $refsParentNode,
+                'confNode' => $confContent
             ] + $params
         );
     }

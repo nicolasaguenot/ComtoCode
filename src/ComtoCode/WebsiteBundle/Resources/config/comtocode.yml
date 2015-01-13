@@ -1,6 +1,7 @@
 
 parameters:
     # Node params
+    comtocode.node.conf: 89
     comtocode.node.skills: 62
     comtocode.node.refs: 64
     comtocode.homepage.skills_contenttype: 'skills'
