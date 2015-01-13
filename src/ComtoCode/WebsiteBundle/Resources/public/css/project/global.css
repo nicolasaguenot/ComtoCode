@@ -13,7 +13,17 @@ b, strong{ font-weight:700; }
 
 h1, h2, h3{ text-transform: uppercase;}
 
-
+a{
+    color: #1692B0;
+    -webkit-transition: all .2s ease-in;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+a:hover{
+    text-decoration:none;
+    color: #24d1fd;
+}
 
 
 /* Intro block */
@@ -52,3 +62,20 @@ h1, h2, h3{ text-transform: uppercase;}
 }
 
 /* End intro block */
+
+/* Button block */
+.button-block{
+    margin-top:30px;
+}
+.button-block a{
+    display:block;
+    padding:3px 0px;
+    background:#1692B0;
+    color:#fff;
+    border:1px solid #1692B0;
+    text-transform: uppercase;
+}
+.button-block a:hover{
+    background:#fff;
+    color:#1692B0;
+}

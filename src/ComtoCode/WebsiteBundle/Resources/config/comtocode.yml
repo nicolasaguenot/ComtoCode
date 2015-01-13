@@ -1,4 +1,4 @@
-system:
-    default:
-        user:
-            layout: ComtoCodeWebsiteBundle::pagelayout.html.twig
+
+parameters:
+    comtocode.node.skills: 62
+    comtocode.homepage.skills_contenttype: 'skills'

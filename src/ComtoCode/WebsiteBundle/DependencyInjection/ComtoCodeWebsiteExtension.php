@@ -30,8 +30,9 @@ class ComtoCodeWebsiteExtension extends Extension implements PrependExtensionInt
         $config = $this->processConfiguration($configuration, $configs);
 
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $loader->load('services.yml');
-
+        $loader->load( 'services.yml' );
+        // Website file
+        $loader->load( 'comtocode.yml' );
 
     }
 
@@ -62,9 +63,6 @@ class ComtoCodeWebsiteExtension extends Extension implements PrependExtensionInt
         $container->prependExtensionConfig( 'ezpublish', $config );
         $container->addResource( new FileResource( $configFile ) );
 
-        $configFile = __DIR__ . '/../Resources/config/comtocode.yml';
-        $config = Yaml::parse( file_get_contents( $configFile ) );
-        $container->prependExtensionConfig( 'ezpublish', $config );
-        $container->addResource( new FileResource( $configFile ) );
+
     }
 }

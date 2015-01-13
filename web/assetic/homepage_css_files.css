@@ -1,5 +1,40 @@
 body{
 
+}
 
+#skills-block header,
+#skills-block .header{
+    margin:20px 0px;
+}
+#skills-block h2{
+    font-size:50px;
+    color:#1692B0;
+    font-weight: 300;
+}
+#skills-block .attribute-short{
+    font-size:25px;
+    color:#0C687E;
+}
+#skills-block #skills-list{
+    font-size:25px;
+    padding:30px 0px;
+    font-weight:300;
+}
 
+#skills-block #skills-list h3{
+    font-size:28px;
+    font-weight:700;
+    margin:0px;
+    padding:20px 0px 10px;
+}
+#skills-block #skills-list .attribute-short{
+    font-size:18px;
+    color:#0C687E;
+}
+#skills-block #skills-list a:hover .attribute-short{
+    color: #24d1fd;
+    -webkit-transition: color .2s ease-in;
+    -moz-transition: color .2s ease-in;
+    -o-transition: color .2s ease-in;
+    transition: color .2s ease-in;
 }

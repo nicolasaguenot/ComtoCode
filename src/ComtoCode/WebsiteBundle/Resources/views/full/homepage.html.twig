@@ -1,8 +1,8 @@
 {% extends "ComtoCodeWebsiteBundle::pagelayout.html.twig" %}
 
-
-
+{# Display specific title and meta tags in terms of current content #}
 {% block meta %}
+
     {% if not ez_is_field_empty( content, "meta_title" ) %}
         {% set title = ez_field_value( content, "meta_title" ).text %}
     {% endif %}
@@ -10,33 +10,62 @@
        {% set meta_tags = meta_tags|merge( {"description": ez_field_value( content, "meta_description" ).text }) %}
     {% endif %}
     {{ parent() }}
+
 {% endblock %}
 
 {% block content %}
-    <article id="intro-block" class="container-fluid">
 
+    {% include "ComtoCodeWebsiteBundle:include:bloc_intro.html.twig" %}
+
+    <article id="skills-block" class="container-fluid">
         <div class="row">
-            {# Image field bg_intro - If not empty, we display it #}
-            {% if not ez_is_field_empty( content, "bg_intro" ) %}
-                <div class="bg bg-img">
-                    {% set imageAlias = ez_image_alias( content.getField( "bg_intro" ), content.versionInfo, "original" ) %}
-                    <img class="img-full" src="{{ asset( imageAlias.uri ) }}" height="{{ imageAlias.height }}" width="{{ imageAlias.width }}" alt="" />
-            {# if image field bg_intro is empty and text line color_bg_intro contains a value, we display this color #}
-            {% elseif not ez_is_field_empty( content, "color_bg_intro" ) %}
-                <div class="bg bg-color" style="background-color:{{ ez_field_value(content, 'color_bg_intro').text }}">
-            {% endif %}
-                {# Intro xml block field #}
-                {% if not ez_is_field_empty( content, "intro" ) %}
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12 align-center">
-                                    {{ ez_render_field( content, "intro" ) }}
+            <div class="container">
+                <div class="row">
+                    <header class="col-md-12 align-center header">
+                        {# Skills title #}
+                        {% if not ez_is_field_empty( content, "skills_title" ) %}
+                            <h2>{{ ez_field_value( content, "skills_title" ) }}</h2>
+                        {% endif %}
+                        {# Skills intro #}
+                        {% if not ez_is_field_empty( content, "skills_intro" ) %}
+                            <div class="attribute-short">
+                                {{ ez_render_field( content, "skills_intro" ) }}
+                            </div>
+                        {% endif %}
+                    </header>
+
+                    {# List of skills children of homepage - No limitations #}
+                    {% if skills|length > 0 %}
+                        <section id="skills-list" class="col-md-12 clearfix">
+                            <div class="container">
+                                <div class="row">
+                                    {% for skill in skills %}
+
+                                        <div class="col-md-4">
+                                            {{ render_esi( controller( "ez_content:viewLocation", {
+                                                    "locationId": skill.valueObject.contentInfo.mainLocationId,
+                                                    "viewType": "block"
+                                                    } )) }}
+                                        </div>
+
+                                    {% endfor %}
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 align-center button-block">
+
+                                        <a href="{{ path( 'ez_urlalias', {'locationId': skillsParentNode} ) }}"
+                                           title="{{ 'skills.discover'|trans }}">
+
+                                            {{ 'skills.discover'|trans }}
+                                        </a>
+                                    </div>
+
                                 </div>
                             </div>
-                        </div>
-                {% endif %}
+                        </section>
+                    {% endif %}
+                </div>
             </div>
-
         </div>
     </article>
 

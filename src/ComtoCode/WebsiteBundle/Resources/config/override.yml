@@ -5,6 +5,7 @@ system:
         location_view:
             full:
                 homepage:
+                    controller: ComtoCodeWebsiteBundle:Homepage:listSkillsProject
                     template: ComtoCodeWebsiteBundle:full:homepage.html.twig
                     match:
                         Identifier\ContentType: "homepage"
@@ -12,3 +13,8 @@ system:
                     template: ComtoCodeWebsiteBundle:full:landingpage.html.twig
                     match:
                         Identifier\ContentType: "landing_page"
+            block:
+                skills:
+                    template: ComtoCodeWebsiteBundle:block:skills.html.twig
+                    match:
+                        Identifier\ContentType: "skills"

@@ -1,0 +1,35 @@
+{#
+Bloc intro file :
+    Use to insert content in block with a bg_color or an image.
+    Attribute on class :
+        - bg_intro (image)
+        - color_bg_intro (text_line)
+        - intro (xml_block)
+#}
+
+
+
+<article id="intro-block" class="container-fluid">
+    <div class="row">
+        {# Image field bg_intro - If not empty, we display it #}
+        {% if not ez_is_field_empty( content, "bg_intro" ) %}
+            <div class="bg bg-img">
+                {% set imageAlias = ez_image_alias( content.getField( "bg_intro" ), content.versionInfo, "original" ) %}
+                <img class="img-full" src="{{ asset( imageAlias.uri ) }}" height="{{ imageAlias.height }}" width="{{ imageAlias.width }}" alt="" />
+        {# if image field bg_intro is empty and text line color_bg_intro contains a value, we display this color #}
+        {% elseif not ez_is_field_empty( content, "color_bg_intro" ) %}
+            <div class="bg bg-color" style="background-color:{{ ez_field_value(content, 'color_bg_intro').text }}">
+        {% endif %}
+            {# Intro xml block field #}
+            {% if not ez_is_field_empty( content, "intro" ) %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 align-center">
+                            {{ ez_render_field( content, "intro" ) }}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            </div>
+        </div>
+</article>

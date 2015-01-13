@@ -9,7 +9,6 @@ assets:
     global_css_files:
         inputs:
             - '@ComtoCodeWebsiteBundle/Resources/public/css/bootstrap.min.css'
-            - '@ComtoCodeWebsiteBundle/Resources/public/css/fontawesome.min.css'
             - '@ComtoCodeWebsiteBundle/Resources/public/css/project/global.css'
     homepage_css_files:
         inputs:
