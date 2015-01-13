@@ -3,3 +3,6 @@
 skills:
     #homepage.html.twig
     discover: Découvrez toutes nos compétences
+
+refs:
+    all_project: Tous nos projets

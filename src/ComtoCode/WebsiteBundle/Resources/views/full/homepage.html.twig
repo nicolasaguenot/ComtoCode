@@ -17,7 +17,7 @@
 
     {% include "ComtoCodeWebsiteBundle:include:bloc_intro.html.twig" %}
 
-    <article id="skills-block" class="container-fluid">
+    <article id="skills-block" class="section-block container-fluid">
         <div class="row">
             <div class="container">
                 <div class="row">
@@ -40,27 +40,79 @@
                             <div class="container">
                                 <div class="row">
                                     {% for skill in skills %}
-
                                         <div class="col-md-4">
                                             {{ render_esi( controller( "ez_content:viewLocation", {
                                                     "locationId": skill.valueObject.contentInfo.mainLocationId,
                                                     "viewType": "block"
                                                     } )) }}
                                         </div>
-
                                     {% endfor %}
                                 </div>
+                                {# Link Skills discover #}
                                 <div class="row">
                                     <div class="col-md-12 align-center button-block">
-
                                         <a href="{{ path( 'ez_urlalias', {'locationId': skillsParentNode} ) }}"
                                            title="{{ 'skills.discover'|trans }}">
-
-                                            {{ 'skills.discover'|trans }}
+                                                {{ 'skills.discover'|trans }}
                                         </a>
                                     </div>
 
                                 </div>
+                            </div>
+                        </section>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <article id="reference-block" class="section-block block-dark container-fluid">
+        <div class="row">
+            <div class="container-fluid">
+                <div class="row">
+                    <header class="col-md-12 align-center header">
+                        {# Skills title #}
+                        {% if not ez_is_field_empty( content, "reference_title" ) %}
+                            <h2>{{ ez_field_value( content, "reference_title" ) }}</h2>
+                        {% endif %}
+                        {# Skills intro #}
+                        {% if not ez_is_field_empty( content, "reference_intro" ) %}
+                            <div class="attribute-short">
+                                {{ ez_render_field( content, "reference_intro" ) }}
+                            </div>
+                        {% endif %}
+                    </header>
+                </div>
+                <div class="row">
+                    {# List of skills children of homepage - No limitations #}
+                    {% if refs|length > 0 %}
+                        <section id="reference-list" class="clearfix">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    {% for key, ref in refs %}
+                                        {% if key == 0 %}
+                                            <div class="col-md-8">
+                                        {% elseif key == 1 %}
+                                            </div><div class="col-md-4">
+                                        {% endif %}
+
+                                            {{ render_esi( controller( "ez_content:viewLocation", {
+                                                "locationId": ref.valueObject.contentInfo.mainLocationId,
+                                                "viewType": "block",
+                                                "params": { "key_ref": key }
+                                            } )) }}
+
+                                    {% endfor %}
+                                            <div class="align-center button-block">
+                                                <a href="{{ path( 'ez_urlalias', {'locationId': refsParentNode} ) }}"
+                                                   title="{{ 'refs.all_project'|trans }}">
+                                                    <i class="fa fa-chevron-right"></i> {{ 'refs.all_project'|trans }}
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                </div>
+
                             </div>
                         </section>
                     {% endif %}

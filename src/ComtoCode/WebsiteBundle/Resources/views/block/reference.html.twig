@@ -1,0 +1,47 @@
+{% extends viewbaseLayout %}
+
+{% block content %}
+    {% set title = ez_content_name( content ) %}
+
+    {% if key_ref == 0 %}
+        {% set imgClass = "ref_full" %}
+    {% else %}
+        {% set imgClass = "ref_little" %}
+    {% endif %}
+    <article class='block-reference align-center'>
+
+        <a href="{{ path( location ) }}" title="{{ title }}">
+
+            <div class="ref-wrapper">
+
+                {% if not ez_is_field_empty( content, "image" ) %}
+                <div class="attribute-image">
+                    {% set imageAlias = ez_image_alias( content.getField( "image" ), content.versionInfo, imgClass ) %}
+                    <img class="img-responsive" src="{{ asset( imageAlias.uri ) }}" height="{{ imageAlias.height }}" width="{{ imageAlias.width }}" alt="" />
+                    {# if image field bg_intro is empty and text line color_bg_intro contains a value, we display this color #}
+                </div>
+                {% endif %}
+
+                <div class="attribute-contentOverlay">
+
+
+                    <div class="attribute-content align-center">
+                        <span class="fa-stack fa-3x">
+                          <i class="fa fa-circle-thin fa-stack-2x"></i>
+                            <i class="fa fa-link fa-stack-1x"></i>
+                        </span>
+                        <h3>{{ title }}</h3>
+                        {% if not ez_is_field_empty( content, "sub_title" ) %}
+                            <h4>
+                                {{ ez_render_field( content, "sub_title" ) }}
+                            </h4>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </a>
+    </article>
+
+
+{% endblock %}

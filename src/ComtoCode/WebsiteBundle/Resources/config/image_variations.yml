@@ -1,7 +1,18 @@
 system:
     default:
         image_variations:
-            medium:
-                reference: null
+            campaign:
+                reference: ~
                 filters:
-                    - { name: geometry/scaledownonly, params: [200, 290] }
+                    geometry/scalewidthdownonly: [770]
+                    geometry/crop: [770, 390, 0, 0]
+            ref_full:
+                reference: ~
+                filters:
+                    geometry/scaleheight: [676]
+                    geometry/crop: [1200, 676, 0, 0]
+            ref_little:
+                reference: ~
+                filters:
+                    geometry/scalewidth: [600]
+                    geometry/crop: [600, 300, 0, 0]

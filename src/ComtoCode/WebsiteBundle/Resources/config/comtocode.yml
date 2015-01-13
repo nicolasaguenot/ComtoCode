@@ -1,4 +1,8 @@
 
 parameters:
+    # Node params
     comtocode.node.skills: 62
+    comtocode.node.refs: 64
     comtocode.homepage.skills_contenttype: 'skills'
+    comtocode.homepage.refs_contenttype: 'reference'
+    comtocode.homepage.max_refs_number: 3

@@ -18,3 +18,7 @@ system:
                     template: ComtoCodeWebsiteBundle:block:skills.html.twig
                     match:
                         Identifier\ContentType: "skills"
+                reference:
+                    template: ComtoCodeWebsiteBundle:block:reference.html.twig
+                    match:
+                        Identifier\ContentType: "reference"

@@ -15,10 +15,10 @@ h1, h2, h3{ text-transform: uppercase;}
 
 a{
     color: #1692B0;
-    -webkit-transition: color .2s ease-in;
-    -moz-transition: color .2s ease-in;
-    -o-transition: color .2s ease-in;
-    transition: color .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    transition: all .2s ease-in;
 }
 a:hover{
     text-decoration:none;
@@ -65,11 +65,11 @@ a:hover{
 
 /* Button block */
 .button-block{
-    margin-top:20px;
+    margin-top:30px;
 }
 .button-block a{
     display:block;
-    padding:5px 0px;
+    padding:3px 0px;
     background:#1692B0;
     color:#fff;
     border:1px solid #1692B0;
@@ -78,5 +78,4 @@ a:hover{
 .button-block a:hover{
     background:#fff;
     color:#1692B0;
-    border:1px solid #1692B0;
 }
