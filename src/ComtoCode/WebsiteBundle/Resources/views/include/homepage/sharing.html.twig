@@ -1,0 +1,82 @@
+{#
+Sharing content file :
+    Use to insert sharing twitter flow. Use configuration class
+    Attribute on class :
+        - sharing_title (text_line)
+        - sharing_intro (xml_block)
+    Use translation for skills.discover
+#}
+
+<article id="sharing-block" class="section-block container-fluid">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <header class="col-md-12 align-center header">
+                    {# Skills title #}
+                    {% if not ez_is_field_empty( confNodeContent, "sharing_title" ) %}
+                        <h2>{{ ez_field_value( confNodeContent, "sharing_title" ) }}</h2>
+                    {% endif %}
+                    {# Skills intro #}
+                    {% if not ez_is_field_empty( confNodeContent, "sharing_intro" ) %}
+                        <div class="attribute-short">
+                            {{ ez_render_field( confNodeContent, "sharing_intro" ) }}
+                        </div>
+                    {% endif %}
+                </header>
+
+
+                {% if not ez_is_field_empty( confNodeContent, "twitter_username" ) %}
+
+                    {% set twitter_username = ez_field_value( confNodeContent, "twitter_username" ).text %}
+                    {% set twitter_limit = ez_field_value( confNodeContent, "twitter_nb" ).value|default(3) %}
+                    <section id="skills-list" class="col-md-12 clearfix">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="attribute-twitter align-center">
+                                        <a class="twitter_link" target="blank" href={{ "https://twitter.com/" ~ twitter_username }}>
+                                            <i class="fa fa-5x fa-twitter"></i>
+
+                                            <span class="twitter-follow"> {{ 'social.follow_us'|trans}} </span>
+
+                                            <span class="twitter-username"> {{ "@" ~ twitter_username }} </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div id="twitter-loader" class="align-center">
+                                        <i class="fa fa-3x fa-refresh fa-spin"></i>
+                                    </div>
+                                    <div id="twitter-tl" class="no-display">
+
+                                        <a class="twitter-timeline"
+                                           href={{ "https://twitter.com/" ~ twitter_username }}
+                                           data-widget-id="552114902727667713"
+                                           data-chrome="noheader nofooter transparent"
+                                           data-tweet-limit="{{ twitter_limit }}"
+                                           data-related="{{ twitter_username }}"
+                                           data-list-owner-screen-name="{{ twitter_username }}"
+                                           data-show-replies="false"
+                                           data-aria-polite="assertive"
+                                                > {{ "Tweets de @" ~ twitter_username }} </a>
+                                        <script>
+                                            !function(d,s,id){
+                                                var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+                                                if(!d.getElementById(id)){
+                                                    js=d.createElement(s);
+                                                    js.id=id;
+                                                    js.src=p+"://platform.twitter.com/widgets.js";
+                                                    fjs.parentNode.insertBefore(js,fjs);
+                                                }
+                                            }(document,"script","twitter-wjs");
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</article>

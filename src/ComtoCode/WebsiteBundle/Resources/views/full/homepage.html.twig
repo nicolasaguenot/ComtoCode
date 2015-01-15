@@ -15,10 +15,17 @@
 
 {% block content %}
 
+    {% set confNodeContent = confNode.0.valueObject %}
+
     {% include "ComtoCodeWebsiteBundle:include:bloc_intro.html.twig" %}
 
     {% include "ComtoCodeWebsiteBundle:include/homepage:skills.html.twig" %}
 
     {% include "ComtoCodeWebsiteBundle:include/homepage:references.html.twig" %}
+
+    {% include "ComtoCodeWebsiteBundle:include/homepage:sharing.html.twig" %}
+
+
+
 
 {% endblock %}

@@ -13,23 +13,34 @@ body{
     margin-right:auto;
 }
 
-b, strong{ font-weight:700; }
+.no-display{ display:none;}
 
+b, strong{ font-weight:700; }
 
 h1, h2, h3{ text-transform: uppercase;}
 
-a{
+
+a,
+a:link,
+a:visited
+{
     color: #1692B0;
-    -webkit-transition: all .2s ease-in;
-    -moz-transition: all .2s ease-in;
-    -o-transition: all .2s ease-in;
-    transition: all .2s ease-in;
 }
+a:focus,
 a:hover{
     text-decoration:none;
     color: #24d1fd;
 }
 
+a,
+a i,
+a span,
+a strong{
+    -webkit-transition: all .2s ease-in;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
 
 /* Intro block */
 
@@ -84,3 +95,25 @@ a:hover{
     background:#fff;
     color:#1692B0;
 }
+
+/* End button-block */
+
+
+/* Sharing block */
+#sharing-block #twitter-loader{
+    min-height:300px;
+    color:#24d1fd;
+}
+#sharing-block #twitter-loader i { padding:50px 0px; }
+#sharing-block .attribute-twitter a{
+    font-size:35px;
+    font-weight: 300;
+}
+#sharing-block .attribute-twitter a span{ display:block; }
+#sharing-block .attribute-twitter a i{ color:#55ACEE; }
+#sharing-block .attribute-twitter a:hover i{ color:#FD7822;}
+#sharing-block .attribute-twitter a .twitter-username{
+    font-weight:700;
+    color:#24d1fd;
+}
+#sharing-block .attribute-twitter a:hover span{ color:#1692B0; }

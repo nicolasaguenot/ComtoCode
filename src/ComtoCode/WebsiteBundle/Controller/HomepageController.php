@@ -28,7 +28,6 @@ class HomepageController extends Controller
         $response->setSharedMaxAge(86400);
         $response->headers->set("X-Location-Id", $locationId );
 
-
         $searchService = $this->getRepository()->getSearchService();
 
         // See comtocde.yml to see params
@@ -82,7 +81,7 @@ class HomepageController extends Controller
                 'skillsParentNode' => $skillsParentNode,
                 'refs' => $listRefs->searchHits,
                 'refsParentNode' => $refsParentNode,
-                'confNode' => $confContent
+                'confNode' => $confContent->searchHits
             ] + $params
         );
     }

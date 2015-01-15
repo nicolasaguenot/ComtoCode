@@ -6,6 +6,7 @@ assets:
     global_js_footer_files:
         inputs:
             - '@ComtoCodeWebsiteBundle/Resources/public/js/bootstrap.min.js'
+            - '@ComtoCodeWebsiteBundle/Resources/public/js/twitter_widget_customize.js'
     global_css_files:
         inputs:
             - '@ComtoCodeWebsiteBundle/Resources/public/css/bootstrap.min.css'
