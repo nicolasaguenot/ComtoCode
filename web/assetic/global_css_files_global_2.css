@@ -112,3 +112,41 @@ a strong{
     color:#24d1fd;
 }
 #sharing-block .attribute-twitter a:hover span{ color:#1692B0; }
+
+
+
+#main{ margin-top:68px;}
+
+/* Menu */
+
+.navbar.navbar-default{
+    min-height:65px;
+    background:#fff;
+    border-bottom:1px solid #1692B0;
+}
+
+.navbar.navbar-default .navbar-nav{
+    margin-right:20px;
+}
+.navbar.navbar-default .navbar-brand{
+    padding:0px 10px;
+    margin-left:20px;
+}
+.navbar.navbar-default .navbar-nav > li > a{
+    font-weight:300;
+    text-transform:uppercase;
+    line-height:1em;
+    font-size:18px;
+    padding-bottom:25px;
+    padding-top:25px;
+    color:#1692b0;
+}
+
+.navbar.navbar-default .navbar-nav > li > a:hover,
+.navbar.navbar-default .navbar-nav > li.active > a {
+    background:#0C687E;
+    color:#fff;
+}
+
+
+

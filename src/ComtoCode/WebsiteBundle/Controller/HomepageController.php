@@ -85,11 +85,7 @@ class HomepageController extends Controller
             ] + $params
         );
     }
-    public function urlRedirectAction( $urlRedirect = "")
-    {
 
-        return $this->redirect($this->generateUrl($urlRedirect));
-    }
 
 }
 

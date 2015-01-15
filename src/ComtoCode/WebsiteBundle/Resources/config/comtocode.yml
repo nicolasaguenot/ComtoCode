@@ -7,3 +7,6 @@ parameters:
     comtocode.homepage.skills_contenttype: 'skills'
     comtocode.homepage.refs_contenttype: 'reference'
     comtocode.homepage.max_refs_number: 3
+
+    comtocode.menu.main_node: 2
+    comtocode.menu.contentTypeIdentifier: ['landing_page', 'folder', 'feedback_form']

@@ -1,0 +1,38 @@
+
+
+
+
+{% if menulist is defined %}
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand" title="Com to Code">
+                    <img src="{{ asset( 'bundles/comtocodewebsite/images/logo.png' ) }}" alt="Com to Code" />
+                </a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    {% for item in menulist %}
+                        <li>
+                            <a href="{{ path( 'ez_urlalias', {'locationId': item.valueObject.contentInfo.mainLocationId} ) }}"
+                               title="{{ item.valueObject.contentInfo.name }}">
+
+                                {{ item.valueObject.contentInfo.name }}
+                            </a>
+                        </li>
+
+                    {% endfor %}
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+
+
+{% endif %}
