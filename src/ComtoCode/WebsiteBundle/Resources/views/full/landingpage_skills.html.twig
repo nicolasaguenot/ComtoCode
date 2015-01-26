@@ -1,0 +1,45 @@
+{% extends "ComtoCodeWebsiteBundle::pagelayout.html.twig" %}
+
+{# Display specific title and meta tags in terms of current content #}
+{% block meta %}
+
+    {% if not ez_is_field_empty( content, "meta_title" ) %}
+        {% set title = ez_field_value( content, "meta_title" ).text %}
+    {% endif %}
+    {% if not ez_is_field_empty( content, "meta_description" ) %}
+        {% set meta_tags = meta_tags|merge( {"description": ez_field_value( content, "meta_description" ).text }) %}
+    {% endif %}
+    {{ parent() }}
+
+{% endblock %}
+
+{% block content %}
+
+    {% set confNodeContent = confNode.0.valueObject %}
+
+    {% include "ComtoCodeWebsiteBundle:include:bloc_intro.html.twig" %}
+
+
+
+    {# List of skills children of homepage - No limitations #}
+    {% if skills|length > 0 %}
+        <section id="lp-skills-list" class="section-block clearfix">
+            <div class="container">
+                <div class="row">
+                    {% set align = "left" %}
+                    {% for skill in skills %}
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            {{ render_esi( controller( "ez_content:viewLocation", {
+                                "locationId": skill.valueObject.contentInfo.mainLocationId,
+                                "viewType": "embed",
+                                "params": { "align": align }
+                            } )) }}
+                            {% if align == "left" %}{% set align = "right" %}{% else %}{% set align = "left" %}{% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    {% endif %}
+
+{% endblock %}

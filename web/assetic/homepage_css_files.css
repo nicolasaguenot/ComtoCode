@@ -76,9 +76,9 @@ body{
     position: relative;
 }
 #reference-list .block-reference a:hover .attribute-contentOverlay{
-
     background-color: rgba(0, 0, 0, 0.5);
 }
+
 #reference-list .block-reference .attribute-contentOverlay {
     background-color: transparent;
     height: 100%;
@@ -119,29 +119,16 @@ body{
 
 @media screen and (max-width: 1199px) {
 
-    .section-block .header h2{
-        font-size:45px;
-    }
+    .section-block .header h2{font-size:45px;}
 }
 
 
 @media screen and (max-width: 991px) {
 
-    .section-block .header .attribute-short {
-        font-size: 20px;
-    }
-
-    #skills-block #skills-list {
-        font-size: 20px;
-    }
-
-    #skills-block #skills-list h3 {
-        font-size: 23px;
-    }
-
-    #skills-block #skills-list .attribute-short {
-        font-size: 13px;
-    }
+    .section-block .header .attribute-short {font-size: 20px;}
+    #skills-block #skills-list { font-size: 20px;}
+    #skills-block #skills-list h3 {font-size: 23px; }
+    #skills-block #skills-list .attribute-short {font-size: 13px;}
     #reference-list .block-reference .attribute-content h3{
         font-size:20px;
         margin:0px;
@@ -154,33 +141,16 @@ body{
         padding:10px 0px;
         font-size:16px;
     }
-    .attribute-twitter{
-        padding-bottom:20px;
-    }
-    #sharing-block .attribute-twitter a{
-        font-size:25px;
-    }
+    .attribute-twitter{ padding-bottom:20px;}
+    #sharing-block .attribute-twitter a{ font-size:25px; }
 }
 
 @media screen and (max-width: 480px) {
-    .section-block .header h2{
-        font-size:25px;
-    }
-    .section-block .header .attribute-short {
-        font-size: 18px;
-    }
-
-    #skills-block #skills-list {
-        font-size: 18px;
-    }
-
-    #skills-block #skills-list h3 {
-        font-size: 18px;
-    }
-
-    #skills-block #skills-list .attribute-short {
-        font-size: 13px;
-    }
+    .section-block .header h2{font-size:25px; }
+    .section-block .header .attribute-short {font-size: 18px;}
+    #skills-block #skills-list {font-size: 18px;}
+    #skills-block #skills-list h3 { font-size: 18px; }
+    #skills-block #skills-list .attribute-short {  font-size: 13px; }
 
 
 }

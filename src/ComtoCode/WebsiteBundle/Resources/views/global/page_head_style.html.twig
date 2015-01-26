@@ -8,9 +8,17 @@
 
 
 {# TODO: Add dynamic contentTypeId file selection #}
+
 {% if location.contentInfo.contentTypeId == 40 %}
     {% stylesheets '@homepage_css_files' filter='cssrewrite' output='css/homepage.css' %}
         <link rel="stylesheet" type="text/css" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endif %}
+
+
+{% if location.contentInfo.contentTypeId == 23 %}
+    {% stylesheets '@landingpage_css_files' filter='cssrewrite' output='css/landingpage.css' %}
+    <link rel="stylesheet" type="text/css" href="{{ asset_url }}"/>
     {% endstylesheets %}
 {% endif %}
 

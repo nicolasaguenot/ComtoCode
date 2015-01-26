@@ -6,22 +6,22 @@
 
         <a href="{{ path( location ) }}" title="{{ title }}">
 
-        {% if not ez_is_field_empty( content, "icon_fa" ) %}
-            <span class="attribute-icon">
-                {% set icon_fa_class = "fa fa-5x "~ez_field_value(content, 'icon_fa') %}
+            {% if not ez_is_field_empty( content, "icon_fa" ) %}
+                <span class="attribute-icon">
+                    {% set icon_fa_class = "fa fa-5x "~ez_field_value(content, 'icon_fa') %}
 
-                <i class="{{ icon_fa_class }}"></i>
-            </span>
-        {% endif %}
-        <h3>
-            {{ title }}
-        </h3>
+                    <i class="{{ icon_fa_class }}"></i>
+                </span>
+            {% endif %}
+            <h3>
+                {{ title }}
+            </h3>
 
-        {% if not ez_is_field_empty( content, "content" ) %}
-            <div class="attribute-short">
-                {{ ez_render_field( content, "content" ) }}
-            </div>
-        {% endif %}
+            {% if not ez_is_field_empty( content, "content" ) %}
+                <div class="attribute-short">
+                    {{ ez_render_field( content, "content" ) }}
+                </div>
+            {% endif %}
         </a>
     </article>
 

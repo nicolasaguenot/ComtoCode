@@ -9,6 +9,12 @@ system:
                     template: ComtoCodeWebsiteBundle:full:homepage.html.twig
                     match:
                         Identifier\ContentType: "homepage"
+                landingpageSkills:
+                    controller: ComtoCodeWebsiteBundle:Landingpage:skills
+                    template: ComtoCodeWebsiteBundle:full:landingpage_skills.html.twig
+                    match:
+                        Identifier\ContentType: "landing_page"
+                        Id\Location: 62
                 landingpage:
                     template: ComtoCodeWebsiteBundle:full:landingpage.html.twig
                     match:
@@ -22,3 +28,8 @@ system:
                     template: ComtoCodeWebsiteBundle:block:reference.html.twig
                     match:
                         Identifier\ContentType: "reference"
+            embed:
+                skills:
+                    template: ComtoCodeWebsiteBundle:embed:skills.html.twig
+                    match:
+                        Identifier\ContentType: "skills"

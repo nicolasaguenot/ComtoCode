@@ -1,0 +1,53 @@
+
+
+
+
+#lp-skills-list{
+
+}
+
+#lp-skills-list{
+    font-size:25px;
+    padding:60px 0px;
+    font-weight:300;
+}
+
+#lp-skills-list .block-skills{
+    margin-bottom:50px;
+}
+
+#lp-skills-list .block-skills .attribute-icon i{
+
+    color:#0C687E;
+    display: inline-block;
+    height: 1.2em;
+    line-height: 1.2em;
+    position: relative;
+    vertical-align: middle;
+    width: 2em;
+
+}
+#lp-skills-list .block-skills  h3{
+    font-size: 35px;
+    color:#0C687E;
+}
+#lp-skills-list .block-skills p{
+    font-size: 20px;
+    color:#0C687E;
+}
+
+#lp-skills-list .block-skills:hover .right-content .attribute-icon i,
+#lp-skills-list .block-skills:hover .right-content p,
+#lp-skills-list .block-skills:hover .right-content h3,
+#lp-skills-list .block-skills:hover .attribute-icon i,
+#lp-skills-list .block-skills:hover p,
+#lp-skills-list .block-skills:hover h3{
+    color:#24d1fd;
+}
+
+#lp-skills-list .block-skills .right-content .attribute-icon i,
+#lp-skills-list .block-skills .right-content p,
+#lp-skills-list .block-skills .right-content h3{
+    color:#1692b0;
+}
+

@@ -14,3 +14,6 @@ assets:
     homepage_css_files:
         inputs:
             - '@ComtoCodeWebsiteBundle/Resources/public/css/project/homepage.css'
+    landingpage_css_files:
+        inputs:
+            - '@ComtoCodeWebsiteBundle/Resources/public/css/project/landingpage.css'

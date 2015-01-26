@@ -76,9 +76,9 @@ body{
     position: relative;
 }
 #reference-list .block-reference a:hover .attribute-contentOverlay{
-
     background-color: rgba(0, 0, 0, 0.5);
 }
+
 #reference-list .block-reference .attribute-contentOverlay {
     background-color: transparent;
     height: 100%;
