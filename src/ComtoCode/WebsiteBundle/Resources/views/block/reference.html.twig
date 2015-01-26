@@ -17,7 +17,7 @@
                 {% if not ez_is_field_empty( content, "image" ) %}
                 <div class="attribute-image">
                     {% set imageAlias = ez_image_alias( content.getField( "image" ), content.versionInfo, imgClass ) %}
-                    <img class="img-responsive" src="{{ asset( imageAlias.uri ) }}" height="{{ imageAlias.height }}" width="{{ imageAlias.width }}" alt="" />
+                    <img class="img-responsive align-center" src="{{ asset( imageAlias.uri ) }}" height="{{ imageAlias.height }}" width="{{ imageAlias.width }}" alt="" />
                     {# if image field bg_intro is empty and text line color_bg_intro contains a value, we display this color #}
                 </div>
                 {% endif %}

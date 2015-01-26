@@ -115,3 +115,42 @@ body{
     font-weight:300;
     font-size:15px;
 }
+
+
+@media screen and (max-width: 1199px) {
+
+    .section-block .header h2{font-size:45px;}
+}
+
+
+@media screen and (max-width: 991px) {
+
+    .section-block .header .attribute-short {font-size: 20px;}
+    #skills-block #skills-list { font-size: 20px;}
+    #skills-block #skills-list h3 {font-size: 23px; }
+    #skills-block #skills-list .attribute-short {font-size: 13px;}
+    #reference-list .block-reference .attribute-content h3{
+        font-size:20px;
+        margin:0px;
+    }
+    #reference-list .block-reference .attribute-content h4{
+        font-size:12px;
+        margin:2px 0px;
+    }
+    #reference-list .button-block a{
+        padding:10px 0px;
+        font-size:16px;
+    }
+    .attribute-twitter{ padding-bottom:20px;}
+    #sharing-block .attribute-twitter a{ font-size:25px; }
+}
+
+@media screen and (max-width: 480px) {
+    .section-block .header h2{font-size:25px; }
+    .section-block .header .attribute-short {font-size: 18px;}
+    #skills-block #skills-list {font-size: 18px;}
+    #skills-block #skills-list h3 { font-size: 18px; }
+    #skills-block #skills-list .attribute-short {  font-size: 13px; }
+
+
+}

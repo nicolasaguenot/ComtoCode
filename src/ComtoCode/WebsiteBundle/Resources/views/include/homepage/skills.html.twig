@@ -32,7 +32,7 @@ Skills intro file :
                         <div class="container">
                             <div class="row">
                                 {% for skill in skills %}
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 col-sm-4 col-xs-12">
                                         {{ render_esi( controller( "ez_content:viewLocation", {
                                             "locationId": skill.valueObject.contentInfo.mainLocationId,
                                             "viewType": "block"

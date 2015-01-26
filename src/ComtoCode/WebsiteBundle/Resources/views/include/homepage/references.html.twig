@@ -35,9 +35,9 @@ References intro file :
                             <div class="row">
                                 {% for key, ref in refs %}
                                     {% if key == 0 %}
-                                        <div class="col-md-8">
+                                        <div class="col-md-8 col-sm-8 col-xs-12">
                                     {% elseif key == 1 %}
-                                        </div><div class="col-md-4">
+                                        </div><div class="col-md-4 col-sm-4  col-xs-12">
                                     {% endif %}
 
                                     {{ render_esi( controller( "ez_content:viewLocation", {

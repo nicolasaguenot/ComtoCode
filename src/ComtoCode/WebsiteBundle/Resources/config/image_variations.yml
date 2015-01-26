@@ -10,9 +10,9 @@ system:
                 reference: ~
                 filters:
                     geometry/scaleheight: [676]
-                    geometry/crop: [1200, 676, 0, 0]
+                    geometry/crop: [1300, 676, 0, 0]
             ref_little:
                 reference: ~
                 filters:
                     geometry/scalewidth: [600]
-                    geometry/crop: [600, 300, 0, 0]
+                    geometry/crop: [650, 300, 0, 0]

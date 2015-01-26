@@ -21,58 +21,17 @@
 </header>
 
 
-
-{#
-<!-- Complete page area: START -->
-{% if currentLocation is defined %}
-    {{ render( controller( "ezpublish_legacy.website_toolbar.controller:websiteToolbarAction", { 'locationId': currentLocation.id} ) ) }}
-{% endif %}
-<div id="page" class="">
-    <!-- Header area: START -->
-    {% block header %}
-        {% include 'eZDemoBundle::page_header.html.twig' %}
-    {% endblock %}
-    <!-- Header area: END -->
-    <div class="navbar main-navi">
-        <!-- Top menu area: START -->
-        {% block topMenu %}
-            {{ render(
-            controller(
-          a   "eZDemoBundle:Menu:topMenu",
-            {'currentLocationId': currentLocation is defined ? currentLocation.id : null}
-            )
-            ) }}
-        {% endblock %}
-        <!-- Top menu area: END -->
-
-        <!-- Path area: START -->
-        {% if pageData is defined and pageData.showPath %}
-            {% block path %}
-                {% include 'eZDemoBundle::page_toppath.html.twig' %}
-            {% endblock %}
-        {% endif %}
-        <!-- Path area: END -->
-    </div>
-    <div class="container">
-        {% block breadcrumb %}
-            {% if currentLocation is defined %}
-                {{ render( controller( 'eZDemoBundle:Demo:viewBreadcrumb', { 'locationId': currentLocation.id } ) ) }}
-            {% endif %}
-        {% endblock %}
-        <div class="row">
-            <!-- Main area: START -->
-            <div class="span{{ innerColumnSize|default( 12 ) }} main-content">
-#}
 <section id="main">
     {% block content %}{% endblock %}
 </secion>
 
 <footer id="main-footer">
-    <!-- Footer script area: START -->
-    {% block footer_js %}{% include 'ComtoCodeWebsiteBundle:global:page_footer_script.html.twig' %}{% endblock %}
-    <!-- Footer script area: END -->
+    {{ render_esi( controller( 'ComtoCodeWebsiteBundle:Layout:footer' ) ) }}
 </footer>
 
+<!-- Footer script area: START -->
+{% block footer_js %}{% include 'ComtoCodeWebsiteBundle:global:page_footer_script.html.twig' %}{% endblock %}
+<!-- Footer script area: END -->
 
 </body>
 </html>
